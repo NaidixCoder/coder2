@@ -25,12 +25,12 @@ function ItemDetail({id, name, img, categoria, desc, price, stock}) {
                     <p>Precio: $ {price}</p>
                 </section>
             </div>    
-                <footer>
+                <footer className="flex justify-center items-start w-[100%] h-[100%]">
                     {
-                        quantityAdded > 0 ? (
-                            <Link to='/cart' className="">Terminar Compra</Link>
+                        quantityAdded > 0 ? ( 
+                            <Link to='/cart' className="bg-second py-1 px-3 rounded-sm text-xl text-main text-center">Terminar Compra</Link>
                         ) : (
-                            <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada", quantity)}/>
+                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
                         )
                     }
 
